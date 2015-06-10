@@ -1,0 +1,77 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Listing #<%= @listing.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+
+                            <dt>Description</dt>
+              <dd><%= @listing.description %></dd>
+
+
+              <dt>Image</dt>
+              <dd><img src="<%= @listing.image %>" Width="220" BORDER="0"></dd>
+
+
+              <dt>Category</dt>
+          <dd><%= @listing.category.category %></dd>
+
+              <!--<dt>Listing</dt>
+              <dd><%= @listing.listing_id %></dd>-->
+
+
+
+              <!--<dt>User</dt>
+              <dd><%= @listing.user_id %></dd>-->
+
+                               <dt>Contact User</dt>
+          <dd><a href="mailto:<%= @listing.user.email %>"><%= @listing.user.email %></a></dd>
+
+
+
+          <dt>Available Now</dt>
+          <dd>
+          <%if @listing.available %>
+          <%= "Yes" %>
+          <%else %>
+          <%= "No" %>
+          <%end%>
+       </dd>
+
+
+
+
+
+
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/listings" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/listings/<%= @listing.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_listing/<%= @listing.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- End responsive panel example -->
